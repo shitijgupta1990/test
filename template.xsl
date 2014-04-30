@@ -364,6 +364,304 @@
 </xsl:if>
 </xsl:for-each>
 <!-- Clause End -->
+
+<!-- Custom Clauses Start Here -->
+<xsl:for-each select="cardsxml/legalDocument/standardCreditSupportAnnexEnglishLaw/customClauses">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/><w:b/><w:bCs/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr><w:r w:rsidRPr="00A67D96"><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/><w:b/><w:bCs/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t>Paragraph <xsl:value-of select="number"/>. <xsl:value-of select="heading"/></w:t></w:r></w:p> 
+
+<!-- Value for Clause Text -->
+<xsl:if test="text!=''">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> <xsl:value-of select="text"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+</xsl:if>
+
+
+<!-- Root Sub Clause Start -->
+<xsl:for-each select="subClauses">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr>
+<xsl:if test="number!=''">
+<w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve">(<xsl:value-of select="number"/>) </w:t></w:r>
+</xsl:if>
+<w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:b/><w:bCs/><w:i/><w:iCs/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="heading"/> </w:t></w:r><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:i/><w:iCs/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve">. </w:t></w:r><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"><xsl:value-of select="text"/> </w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+<!-- Test with Root Sub Clause table -->
+<xsl:if test="table/tr/tc/td!=''">
+<xsl:for-each select="table">
+<w:tbl>
+<w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/><w:tblInd w:w="120" w:type="dxa"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid></w:tblGrid>
+<xsl:for-each select="tr">
+<w:tr w:rsidR="00866433" w:rsidTr="00866433">
+<xsl:for-each select="tc">
+<w:tc>
+<w:tcPr><w:tcW w:w="15000" w:type="dxa"/></w:tcPr><w:p w:rsidR="00866433" w:rsidRDefault="00640018" w:rsidP="001A336A"><w:pPr><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr><w:t><xsl:value-of select="td"/></w:t></w:r></w:p>
+</w:tc>
+</xsl:for-each>
+</w:tr>
+</xsl:for-each>
+</w:tbl>
+</xsl:for-each>
+</xsl:if>
+
+<!-- Sub Clause Nest Lvl 1 Start -->
+<xsl:for-each select="subClauses">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="720"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr>
+<xsl:if test="number!=''">
+<w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t>(<xsl:value-of select="number"/>)</w:t></w:r>
+</xsl:if>
+<w:r><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve">  </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="heading"/> </w:t></w:r><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="text"/> </w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="720"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+
+<!-- Test with Sub Clause Nest Lvl 1 table -->
+<xsl:if test="table/tr/tc/td!=''">
+<xsl:for-each select="table">
+<w:tbl>
+<w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/><w:tblInd w:w="120" w:type="dxa"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid></w:tblGrid>
+<xsl:for-each select="tr">
+<w:tr w:rsidR="00866433" w:rsidTr="00866433">
+<xsl:for-each select="tc">
+<w:tc>
+<w:tcPr><w:tcW w:w="15000" w:type="dxa"/></w:tcPr><w:p w:rsidR="00866433" w:rsidRDefault="00640018" w:rsidP="001A336A"><w:pPr><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr><w:t><xsl:value-of select="td"/></w:t></w:r></w:p>
+</w:tc>
+</xsl:for-each>
+</w:tr>
+</xsl:for-each>
+</w:tbl>
+</xsl:for-each>
+</xsl:if>
+<!-- Sub Clause Nest Lvl 2 Start -->
+<xsl:for-each select="subClauses">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="1440"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr>
+<xsl:if test="number!=''">
+<w:r><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve">(<xsl:value-of select="number"/>) </w:t></w:r>
+</xsl:if>
+<w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="heading"/> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="text"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="1440"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+
+<!-- Test with Sub Clause Nest Lvl 2 table -->
+<xsl:if test="table/tr/tc/td!=''">
+<xsl:for-each select="table">
+<w:tbl>
+<w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/><w:tblInd w:w="120" w:type="dxa"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid></w:tblGrid>
+<xsl:for-each select="tr">
+<w:tr w:rsidR="00866433" w:rsidTr="00866433">
+<xsl:for-each select="tc">
+<w:tc>
+<w:tcPr><w:tcW w:w="15000" w:type="dxa"/></w:tcPr><w:p w:rsidR="00866433" w:rsidRDefault="00640018" w:rsidP="001A336A"><w:pPr><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr><w:t><xsl:value-of select="td"/></w:t></w:r></w:p>
+</w:tc>
+</xsl:for-each>
+</w:tr>
+</xsl:for-each>
+</w:tbl>
+</xsl:for-each>
+</xsl:if>
+<!-- Sub Clause Nest Lvl 3 Start -->
+<xsl:for-each select="subClauses">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="2160"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr>
+<xsl:if test="number!=''">
+<w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve">(<xsl:value-of select="number"/>) </w:t></w:r>
+</xsl:if>
+<w:r><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="heading"/></w:t></w:r><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="text"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="2160"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+
+<!-- Test with Sub Clause Nest Lvl 3 table -->
+<xsl:if test="table/tr/tc/td!=''">
+<xsl:for-each select="table">
+<w:tbl>
+<w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/><w:tblInd w:w="120" w:type="dxa"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid></w:tblGrid>
+<xsl:for-each select="tr">
+<w:tr w:rsidR="00866433" w:rsidTr="00866433">
+<xsl:for-each select="tc">
+<w:tc>
+<w:tcPr><w:tcW w:w="15000" w:type="dxa"/></w:tcPr><w:p w:rsidR="00866433" w:rsidRDefault="00640018" w:rsidP="001A336A"><w:pPr><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr><w:t><xsl:value-of select="td"/></w:t></w:r></w:p>
+</w:tc>
+</xsl:for-each>
+</w:tr>
+</xsl:for-each>
+</w:tbl>
+</xsl:for-each>
+</xsl:if>
+<!-- Sub Clause Nest Lvl 4 Start -->
+<xsl:for-each select="subClauses">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="2880"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr>
+<xsl:if test="number!=''">
+<w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve">(<xsl:value-of select="number"/>) </w:t></w:r>
+</xsl:if>
+<w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="heading"/></w:t></w:r><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="text"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="3600"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+
+<!-- Test with Sub Clause Nest Lvl 4 table -->
+<xsl:if test="table/tr/tc/td!=''">
+<xsl:for-each select="table">
+<w:tbl>
+<w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/><w:tblInd w:w="120" w:type="dxa"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid></w:tblGrid>
+<xsl:for-each select="tr">
+<w:tr w:rsidR="00866433" w:rsidTr="00866433">
+<xsl:for-each select="tc">
+<w:tc>
+<w:tcPr><w:tcW w:w="15000" w:type="dxa"/></w:tcPr><w:p w:rsidR="00866433" w:rsidRDefault="00640018" w:rsidP="001A336A"><w:pPr><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr><w:t><xsl:value-of select="td"/></w:t></w:r></w:p>
+</w:tc>
+</xsl:for-each>
+</w:tr>
+</xsl:for-each>
+</w:tbl>
+</xsl:for-each>
+</xsl:if>
+<!-- Sub Clause Nest Lvl 5 Start -->
+<xsl:for-each select="subClauses">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="3600"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr>
+<xsl:if test="number!=''">
+<w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve">(<xsl:value-of select="number"/>) </w:t></w:r>
+</xsl:if>
+<w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="heading"/> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="text"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="3600"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+
+<!-- Test with Sub Clause Nest Lvl 5 table -->
+<xsl:if test="table/tr/tc/td!=''">
+<xsl:for-each select="table">
+<w:tbl>
+<w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/><w:tblInd w:w="120" w:type="dxa"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid></w:tblGrid>
+<xsl:for-each select="tr">
+<w:tr w:rsidR="00866433" w:rsidTr="00866433">
+<xsl:for-each select="tc">
+<w:tc>
+<w:tcPr><w:tcW w:w="15000" w:type="dxa"/></w:tcPr><w:p w:rsidR="00866433" w:rsidRDefault="00640018" w:rsidP="001A336A"><w:pPr><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr><w:t><xsl:value-of select="td"/></w:t></w:r></w:p>
+</w:tc>
+</xsl:for-each>
+</w:tr>
+</xsl:for-each>
+</w:tbl>
+</xsl:for-each>
+</xsl:if>
+<!-- Sub Clause Nest Lvl 6 Start -->
+<xsl:for-each select="subClauses">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="4320"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr>
+<xsl:if test="number!=''">
+<w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve">(<xsl:value-of select="number"/>) </w:t></w:r>
+</xsl:if>
+<w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="heading"/> </w:t></w:r><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="text"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="4320"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+
+<!-- Test with Sub Clause Nest Lvl 6 table -->
+<xsl:if test="table/tr/tc/td!=''">
+<xsl:for-each select="table">
+<w:tbl>
+<w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/><w:tblInd w:w="120" w:type="dxa"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid></w:tblGrid>
+<xsl:for-each select="tr">
+<w:tr w:rsidR="00866433" w:rsidTr="00866433">
+<xsl:for-each select="tc">
+<w:tc>
+<w:tcPr><w:tcW w:w="15000" w:type="dxa"/></w:tcPr><w:p w:rsidR="00866433" w:rsidRDefault="00640018" w:rsidP="001A336A"><w:pPr><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr><w:t><xsl:value-of select="td"/></w:t></w:r></w:p>
+</w:tc>
+</xsl:for-each>
+</w:tr>
+</xsl:for-each>
+</w:tbl>
+</xsl:for-each>
+</xsl:if>
+<!-- Sub Clause Nest Lvl 7 Start -->
+<xsl:for-each select="subClauses">
+<w:p w:rsidR="00A67D96" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00A67D96"><w:pPr><w:pStyle w:val="Default"/><w:spacing w:line="276" w:lineRule="auto"/><w:ind w:left="5040"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr>
+<xsl:if test="number!=''">
+<w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve">(<xsl:value-of select="number"/>) </w:t></w:r>
+</xsl:if>
+<w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="heading"/>  </w:t></w:r><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="text"/></w:t></w:r></w:p> 
+
+<!-- Test with Sub Clause Nest Lvl 7 table -->
+<xsl:if test="table/tr/tc/td!=''">
+<xsl:for-each select="table">
+<w:tbl>
+<w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="0" w:type="auto"/><w:tblInd w:w="120" w:type="dxa"/><w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/></w:tblPr><w:tblGrid></w:tblGrid>
+<xsl:for-each select="tr">
+<w:tr w:rsidR="00866433" w:rsidTr="00866433">
+<xsl:for-each select="tc">
+<w:tc>
+<w:tcPr><w:tcW w:w="15000" w:type="dxa"/></w:tcPr><w:p w:rsidR="00866433" w:rsidRDefault="00640018" w:rsidP="001A336A"><w:pPr><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr><w:t><xsl:value-of select="td"/></w:t></w:r></w:p>
+</w:tc>
+</xsl:for-each>
+</w:tr>
+</xsl:for-each>
+</w:tbl>
+</xsl:for-each>
+</xsl:if>
+<xsl:if test="bottomText!='' or bottomHeader!=''">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00A67D96"><w:pPr><w:pStyle w:val="Default"/><w:spacing w:line="276" w:lineRule="auto"/><w:ind w:left="4320"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:tab/></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomHeader"/> </w:t></w:r><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomText"/></w:t></w:r></w:p> 
+</xsl:if>
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="5040"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+</xsl:for-each>
+<!-- Sub Clause Nest Lvl 7 End -->
+
+<xsl:if test="bottomText!='' or bottomHeader!=''">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="4320"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr><w:proofErr w:type="spellStart"/><w:r w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomHeader"/> </w:t></w:r><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomText"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="4320"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+</xsl:if>
+</xsl:for-each>
+<!-- Sub Clause Nest Lvl 6 End -->
+
+<xsl:if test="bottomText!='' or bottomHeader!=''">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="3600"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr><w:proofErr w:type="spellStart"/><w:r w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomHeader"/> </w:t></w:r><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomText"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="3600"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+</xsl:if>
+</xsl:for-each>
+<!-- Sub Clause Nest Lvl 5 End -->
+
+<xsl:if test="bottomText!='' or bottomHeader!=''">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="2880"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr><w:proofErr w:type="spellStart"/><w:r w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomHeader"/> </w:t></w:r><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomText"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="2880"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+</xsl:if>
+</xsl:for-each>
+<!-- Sub Clause Nest Lvl 4 End -->
+
+<xsl:if test="bottomText!='' or bottomHeader!=''">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="2160"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr><w:proofErr w:type="spellStart"/><w:r w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomHeader"/> </w:t></w:r><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomText"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="2160"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+</xsl:if>
+</xsl:for-each>
+<!-- Sub Clause Nest Lvl 3 End -->
+
+<xsl:if test="bottomText!='' or bottomHeader!=''">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="1440"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr><w:proofErr w:type="spellStart"/><w:r w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomHeader"/> </w:t></w:r><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomText"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="1440"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+</xsl:if>
+</xsl:for-each>
+<!-- Sub Clause Nest Lvl 2 End -->
+
+<xsl:if test="bottomText!='' or bottomHeader!=''">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="720"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr><w:proofErr w:type="spellStart"/><w:r w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomHeader"/> </w:t></w:r><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomText"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:ind w:left="720"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+</xsl:if>
+</xsl:for-each>
+<!-- Sub Clause Nest Lvl 1 End -->
+
+<xsl:if test="bottomText!='' or bottomHeader!=''">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve">     </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidR="00A67D96" w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomHeader"/> </w:t></w:r><w:r w:rsidR="00A67D96" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:proofErr w:type="spellStart"/><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomText"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+</xsl:if>
+</xsl:for-each>
+<!-- Sub Clause End -->
+
+<xsl:if test="bottomText!='' or bottomHeader!=''">
+<w:p w:rsidR="00277E4F" w:rsidRPr="00A67D96" w:rsidRDefault="00A67D96" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr><w:r w:rsidRPr="00A67D96"><w:rPr><w:b/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomHeader"/> </w:t></w:r><w:r w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve"> </w:t></w:r><w:r w:rsidR="00277E4F" w:rsidRPr="00A67D96"><w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t><xsl:value-of select="bottomText"/></w:t></w:r></w:p> 
+
+<w:p w:rsidR="00277E4F" w:rsidRDefault="00277E4F" w:rsidP="00277E4F"><w:pPr><w:pStyle w:val="Default"/><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:hAnsiTheme="minorHAnsi" w:cstheme="minorHAnsi"/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr></w:pPr></w:p> 
+</xsl:if>
+</xsl:for-each>
+<!-- Custom Clause End -->
 <w:p w:rsidR="00234ADE" w:rsidRDefault="00234ADE" w:rsidP="009A2AEE"><w:pPr><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr></w:pPr></w:p>
 
 <w:p w:rsidR="00234ADE" w:rsidRDefault="00234ADE" w:rsidP="009A2AEE"><w:pPr><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/></w:rPr></w:pPr></w:p>

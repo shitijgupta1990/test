@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <cardsxml>
   <AppData />
   <legalDocument>
@@ -570,8 +570,7 @@ Paragraph 11 also may be specified in one or more Confirmations or other documen
     </subClauses>
   </principleClauses>
   
-  
-  <principleClauses>
+  <customClauses>
     <number>11</number>
     <heading>Elections and Variables</heading>
     <text></text>
@@ -580,11 +579,12 @@ Paragraph 11 also may be specified in one or more Confirmations or other documen
 		<heading>Base Currency and Eligible Currency</heading>
 		<text></text>
 		<subClauses>
-		<number></number>
-		<heading>"Base Currency"</heading>
-		<text>means USD</text>
-		<bottomHeader />
-		<bottomText />
+			<number></number>
+			<heading>"Base Currency"</heading>
+			<text>means USD</text>
+			
+			<bottomHeader />
+			<bottomText />
 	    </subClauses>
 		<subClauses>
 		<number></number>
@@ -596,10 +596,51 @@ Paragraph 11 also may be specified in one or more Confirmations or other documen
 		<bottomHeader />
 		<bottomText />
 	 </subClauses>
+	 <subClauses>
+			<heading>Appendix A -</heading>
+			<text>S&amp;P Eligible Credit Support and S&amp;P Valuation Percentages</text>
+			<table>
+				<tr>
+					<tc><td>Asset Type</td></tc>
+					<tc><td>Rating (in respect of Eligible Credit Support in the form of Securities)</td></tc>
+					<tc><td>Remaining Term to maturity (years)</td></tc>
+					<tc><td>S&amp;P Valuation Percentage</td></tc>
+				</tr>
+				<tr>
+					<tc><td>Cash in the Base Currency</td></tc>
+					<tc><td>N/A</td></tc>
+					<tc><td>N/A</td></tc>
+					<tc><td>100</td></tc>
+				</tr>
+				<tr>
+					<tc><td>Cash in an Eligible Currency other than the Base Currency</td></tc>
+					<tc><td>N/A</td></tc>
+					<tc><td>N/A</td></tc>
+					<tc><td>0</td></tc>
+				</tr>
+				<tr>
+					<tc><td> </td></tc>
+					<tc><td> </td></tc>
+					<tc><td> </td></tc>
+					<tc><td> </td></tc>
+				</tr>
+				<tr>
+					<tc><td>Securities denominated in the Base Currency:</td></tc>
+					<tc><td> </td></tc>
+					<tc><td> </td></tc>
+					<tc><td> </td></tc>
+				</tr>
+				<tr>
+					<tc><td> </td></tc>
+					<tc><td> </td></tc>
+					<tc><td> </td></tc>
+					<tc><td> </td></tc>
+				</tr>
+			</table>
+	 </subClauses>
 	 <bottomHeader />
 	 <bottomText />
-  </principleClauses>
-      <customClauses />
+  </customClauses>
       <collateralEligibiltyRule>
         <asset id="???">
           <creditRating>

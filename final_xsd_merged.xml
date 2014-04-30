@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 3 (http://www.altova.com) by Shankar R Unnithan (HeadStrong Services India Pvt Ltd) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="file:///D:/Cards/CardsAPI/Cards_FpML/Cards_FpML_Version1.3/Cards_appdata.xsd"/>
+	<xs:include schemaLocation="file:///D:/Cards/CardsAPI/Cards_FpML/Cards_FpML_Version1.3/Cards_legalDocument.xsd"/>
+	<xs:element name="cardsxml">
+		<xs:annotation>
+			<xs:documentation>Cards API </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AppData">
+					<xs:annotation>
+						<xs:documentation>Comment describing your root element</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="legalDocument">
+					<xs:annotation>
+						<xs:documentation>Comment describing your root element</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="documentHeader">
+								<xs:annotation>
+									<xs:documentation>Comment describing your root element</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="partyRoles" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="relatedParty" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="partyReference" minOccurs="0">
+																	<xs:complexType>
+																		<xs:attribute name="href" type="xs:string"/>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="role" type="xs:string" minOccurs="0"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="agreementDate" type="xs:date" minOccurs="0"/>
+										<xs:element name="effectiveDate" type="xs:date" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:choice>
+								<xs:element name="standardCreditSupportAnnexEnglishLaw">
+									<xs:annotation>
+										<xs:documentation>Comment describing your root element</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="documentType">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="documentName" type="xs:string"/>
+														<xs:element name="documentPublisher" type="xs:string"/>
+														<xs:element name="documentStyle" type="xs:string"/>
+														<xs:element name="documentVersion" type="xs:int"/>
+														<xs:element name="collateralInterest" type="xs:string"/>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="independentAmounts" minOccurs="2" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="partyReference">
+															<xs:complexType>
+																<xs:attribute name="href" type="xs:string"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="independentAmountDetermination" type="xs:string"/>
+														<xs:element name="amount" type="xs:float"/>
+														<xs:element name="currency" type="xs:string"/>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="baseCurrency" type="xs:string"/>
+											<xs:element name="settlementDay" type="xs:string"/>
+											<xs:element name="disputeResolution">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="resolutionTime">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="hourMinuteTime" type="xs:time"/>
+																	<xs:element name="businessCenter" type="xs:string"/>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="method" type="xs:string"/>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="transportCurrency" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="partyReference">
+															<xs:complexType>
+																<xs:attribute name="href" type="xs:string"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="electedTransportCurrency" type="xs:string"/>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="independentAmountInterestRate">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="specifiedRate" maxOccurs="unbounded">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="currency" type="xs:string"/>
+																	<xs:choice>
+																		<xs:element name="fixedRate" type="xs:float"/>
+																		<xs:sequence>
+																			<xs:element name="floatingRate" type="xs:float"/>
+																			<xs:element name="source" type="xs:string"/>
+																		</xs:sequence>
+																	</xs:choice>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="definition">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="transferInterestAmount" type="xs:float"/>
+																	<xs:element name="alternativeInterestAmount" type="xs:float"/>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="exchangeDate" type="xs:date"/>
+											<xs:element name="thresholdAmount" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="partyReference">
+															<xs:complexType>
+																<xs:attribute name="href" type="xs:string"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="amount" type="xs:float"/>
+														<xs:element name="currency" type="xs:string"/>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="minimumTransferAmount">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="partyReference">
+															<xs:complexType>
+																<xs:attribute name="href" type="xs:string"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="amount" type="xs:float"/>
+														<xs:element name="currency" type="xs:string"/>
+														<xs:element name="conditions">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="condition" type="xs:string" maxOccurs="unbounded"/>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="rounding">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="deliveryamount">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="roundingAmount" type="xs:float"/>
+																	<xs:element name="roundingDirection" type="xs:string"/>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="returnamount">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="roundingAmount" type="xs:float"/>
+																	<xs:element name="roundingDirection" type="xs:string"/>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="notification">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="hourMinuteTime" type="xs:time"/>
+														<xs:element name="businessCenter" type="xs:string"/>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="transfersAddress" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="partyReference">
+															<xs:complexType>
+																<xs:attribute name="href" type="xs:string"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="currency" maxOccurs="unbounded">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="bankName"/>
+																	<xs:element name="bank" maxOccurs="unbounded">
+																		<xs:complexType>
+																			<xs:sequence>
+																				<xs:element name="prefix" type="xs:string"/>
+																				<xs:element name="value"/>
+																			</xs:sequence>
+																		</xs:complexType>
+																	</xs:element>
+																	<xs:element name="account">
+																		<xs:complexType>
+																			<xs:sequence>
+																				<xs:element name="prefix"/>
+																				<xs:element name="value"/>
+																			</xs:sequence>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="currency" type="xs:string"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="principleClauses" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="number" type="xs:int"/>
+														<xs:element name="heading" type="xs:string"/>
+														<xs:element name="text" type="xs:string"/>
+														<xs:element name="subClauses" maxOccurs="unbounded">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="number" type="xs:int"/>
+																	<xs:element name="heading" type="xs:string"/>
+																	<xs:element name="text" type="xs:string"/>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="customClauses" maxOccurs="unbounded"/>
+											<xs:element name="collateralEligibiltyRule">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="asset" maxOccurs="unbounded">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="creditRating" maxOccurs="unbounded">
+																		<xs:complexType>
+																			<xs:sequence>
+																				<xs:element name="value" type="xs:float"/>
+																				<xs:element name="source" type="xs:string"/>
+																				<xs:element name="maturity" maxOccurs="unbounded">
+																					<xs:complexType>
+																						<xs:sequence>
+																							<xs:element name="periodStart" type="xs:string"/>
+																							<xs:element name="periodEnd" type="xs:string"/>
+																							<xs:element name="periodMultiplier" type="xs:string"/>
+																							<xs:element name="valuationPercentage" type="xs:float"/>
+																						</xs:sequence>
+																					</xs:complexType>
+																				</xs:element>
+																			</xs:sequence>
+																		</xs:complexType>
+																	</xs:element>
+																</xs:sequence>
+																<xs:attribute name="id"/>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="witness" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="partyReference" minOccurs="0">
+															<xs:complexType>
+																<xs:attribute name="href" type="xs:string"/>
+															</xs:complexType>
+														</xs:element>
+														<xs:element name="name" type="xs:string" minOccurs="0"/>
+														<xs:element name="tittle" type="xs:string"/>
+														<xs:element name="date" type="xs:date"/>
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:choice>
+							<xs:element name="party">
+								<xs:annotation>
+									<xs:documentation>Comment describing your root element</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="partyId">
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:string">
+														<xs:attribute name="partyIdScheme" type="xs:string"/>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="partyName" type="xs:string"/>
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
