@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 3 (http://www.altova.com) by Shankar R Unnithan (HeadStrong Services India Pvt Ltd) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="file:///D:/Cards/CardsAPI/Cards_FpML/Cards_FpML_Version1.3/Cards_party.xsd"/>
+	<xs:include schemaLocation="file:///D:/Cards/CardsAPI/Cards_FpML/Cards_FpML_Version1.3/Cards_documentHeader.xsd"/>
+	<xs:include schemaLocation="file:///D:/Cards/CardsAPI/Cards_FpML/Cards_FpML_Version1.3/Cards_standardCreditSupportAnnexEnglishLaw.xsd"/>
+	<xs:element name="legalDocument">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="documentHeader"/>
+				<xs:choice>
+					<xs:element ref="standardCreditSupportAnnexEnglishLaw"/>
+				</xs:choice>
+				<xs:element ref="party" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

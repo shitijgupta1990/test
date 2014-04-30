@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 3 (http://www.altova.com) by Shankar R Unnithan (HeadStrong Services India Pvt Ltd) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="file:///D:/Cards/CardsAPI/Cards_FpML/Cards_FpML_Version1.3/Cards_appdata.xsd"/>
+	<xs:include schemaLocation="file:///D:/Cards/CardsAPI/Cards_FpML/Cards_FpML_Version1.3/Cards_legalDocument.xsd"/>
+	<xs:element name="cardsxml">
+		<xs:annotation>
+			<xs:documentation>Cards API </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="AppData"/>
+				<xs:element ref="legalDocument"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
